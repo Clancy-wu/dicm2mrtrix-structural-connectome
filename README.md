@@ -8,7 +8,9 @@ Method 1: You are recommended to run "sh Mrtrix_Script.sh", and all processes wi
 However, you are required to input your sudo password during the processes (only one step requires), after Heudiconv steps finished.  
 To avoid the extra input within the processes, method 2 and 3 can also be try.  
 Method 2: type "sudo ./Mrtrix_Script.sh" and input your password begined the script.  
-Method 3: enter root account, and run the script. like : "su root" & "sh Mrtrix_Script.sh"  
+
+It seems that method2 will take bug in sometime, reportting "command not found". For safety use, I recommand you choose Method1.
+Howver, in order to escape the root identity proces, I recommand you first use "sudo mkdir XX" or someting else, and then type "sh Mrtrix_Script.sh". Because the password will be remained for several minutes, you can run this script and drink an coffee and just wait.
 
 # Details for the script
 1. The script contains Heudiconv and Mrtrix3, which means both of the softwares are required to be installed in the computer.  
