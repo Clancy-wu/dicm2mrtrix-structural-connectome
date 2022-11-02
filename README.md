@@ -4,7 +4,7 @@ This script is created by Kang Wu, Dongzhimen Hospital of Beijing University of 
 If this helped you, please add a start and follow me.  
 
 # Method to use
-Method 1: You are recommended to run "sh Mrtrix Script.sh", and all processes will be autimatically performed.  
+Method 1: You are recommended to run "sh Mrtrix_Script.sh", and all processes will be autimatically performed.  
 However, you are required to input your sudo password during the processes (only one step requires), after Heudiconv steps finished.  
 To avoid the extra input within the processes, method 2 and 3 can also be try.  
 Method 2: type "sudo ./Mrtrix_Script.sh" and input your password begined the script.  
