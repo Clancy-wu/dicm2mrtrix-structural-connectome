@@ -11,7 +11,7 @@ Method 2: type "sudo ./Mrtrix_Script.sh" in the parent folder and input your pas
 Method 3: Enter root user by typing "su", and input your password, then type "sh Mrtrix_Script.sh" 
 
 It seems that method2 will take bug in sometime, reportting "command not found". For safety use, I recommand you choose Method 1 or 2.
-Howver, in order to escape the root identity proces, I recommand you first use "sudo mkdir XX" or someting else, and then type "sh Mrtrix_Script.sh". Because the password will be remained for several minutes, you can run this script and drink an coffee and just wait.
+However, in order to escape the root identified procces, I recommand you first use "sudo mkdir XX" or someting else, and then type "sh Mrtrix_Script.sh". Because the password will be remained for several minutes, you can run this script and drink an coffee and just wait.
 
 # Details for the script
 1. The script contains Heudiconv and Mrtrix3, which means both of the softwares are required to be installed in the computer.  
