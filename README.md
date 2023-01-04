@@ -28,5 +28,5 @@ Ratio between the size of the orignial and the final: 12.6
 Files in the mid-proceeses: retained.  
 With these mid-processes files, the TBSS and Result Visualization can easily be accomplished.  
 
-My email address : clancy_wu@126.com
+My email address : clancy_wu@126.com / clancy_wu@bucm.edu.cn
 
