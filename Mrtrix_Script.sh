@@ -71,11 +71,12 @@ for_each -nthreads 8 BIDS/sub* : tcksift2 -act IN/PRE_5tt_coreg.mif -out_mu IN/s
 for_each -nthreads 8 BIDS/sub* : recon-all -i IN/anat/*.nii.gz -s PRE -sd IN/ -all
 
 #### Step 9 :segment
+## self T1w space for IN/PRE/mri/aparc.a2009s+aseg.mgz
 for_each -nthreads 8 BIDS/sub* : labelconvert IN/PRE/mri/aparc.a2009s+aseg.mgz $FREESURFER_HOME/FreeSurferColorLUT.txt /usr/local/mrtrix3/share/mrtrix3/labelconvert/fs_a2009s.txt IN/PRE_parcels_2009.mif
 
 #### Step 10 : connectome
 for_each -nthreads 8 BIDS/sub* : tck2connectome -symmetric -zero_diagonal -scale_invnodevol -tck_weights_in IN/PRE_sift_1M.txt IN/PRE_tracks_10M.tck IN/PRE_parcels_2009.mif IN/PRE_parcels_2009.csv -out_assignment IN/assignments_PRE_parcels_2009.csv
-
+## self connectome
 for_each -nthreads 8 BIDS/sub* : cp IN/PRE_parcels_2009.csv output/
 
 end_time=`date`
