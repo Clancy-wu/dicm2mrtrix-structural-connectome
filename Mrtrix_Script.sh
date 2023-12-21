@@ -67,7 +67,7 @@ for_each -nthreads 8 BIDS/sub* : tckgen -act IN/PRE_5tt_coreg.mif -backtrack -se
 #### Step 7 : SIFT2
 for_each -nthreads 8 BIDS/sub* : tcksift2 -act IN/PRE_5tt_coreg.mif -out_mu IN/sift_mu.txt -out_coeffs IN/sift_coeffs.txt IN/PRE_tracks_10M.tck IN/PRE_wmfod_norm.mif IN/PRE_sift_1M.txt
 
-#### Step 8 : recon-alli
+#### Step 8 : recon-all
 for_each -nthreads 8 BIDS/sub* : recon-all -i IN/anat/*.nii.gz -s PRE -sd IN/ -all
 
 #### Step 9 :segment
