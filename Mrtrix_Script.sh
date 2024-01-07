@@ -65,7 +65,7 @@ for_each -nthreads 8 BIDS/sub* : 5tt2gmwmi IN/PRE_5tt_coreg.mif IN/gmwmSeed_core
 for_each -nthreads 8 BIDS/sub* : tckgen -act IN/PRE_5tt_coreg.mif -backtrack -seed_gmwmi IN/gmwmSeed_coreg.mif -maxlength 250 -cutoff 0.06 -select 10000000 IN/PRE_wmfod_norm.mif IN/PRE_tracks_10M.tck
 
 #### Step 7 : SIFT2
-for_each -nthreads 8 BIDS/sub* : tcksift2 -act IN/PRE_5tt_coreg.mif -out_mu IN/sift_mu.txt -out_coeffs IN/sift_coeffs.txt IN/PRE_tracks_10M.tck IN/PRE_wmfod_norm.mif IN/PRE_sift_1M.txt
+for_each -nthreads 8 BIDS/sub* : tcksift2 -act IN/PRE_5tt_coreg.mif -out_mu IN/sift_mu.txt -out_coeffs IN/sift_coeffs.txt IN/PRE_tracks_10M.tck IN/PRE_wmfod_norm.mif IN/PRE_sift_1M.csv
 
 #### Step 8 : recon-all
 for_each -nthreads 8 BIDS/sub* : recon-all -i IN/anat/*.nii.gz -s PRE -sd IN/ -all
@@ -75,7 +75,7 @@ for_each -nthreads 8 BIDS/sub* : recon-all -i IN/anat/*.nii.gz -s PRE -sd IN/ -a
 for_each -nthreads 8 BIDS/sub* : labelconvert IN/PRE/mri/aparc.a2009s+aseg.mgz $FREESURFER_HOME/FreeSurferColorLUT.txt /usr/local/mrtrix3/share/mrtrix3/labelconvert/fs_a2009s.txt IN/PRE_parcels_2009.mif
 
 #### Step 10 : connectome
-for_each -nthreads 8 BIDS/sub* : tck2connectome -symmetric -zero_diagonal -scale_invnodevol -tck_weights_in IN/PRE_sift_1M.txt IN/PRE_tracks_10M.tck IN/PRE_parcels_2009.mif IN/PRE_parcels_2009.csv -out_assignment IN/assignments_PRE_parcels_2009.csv
+for_each -nthreads 8 BIDS/sub* : tck2connectome -symmetric -zero_diagonal -scale_invnodevol -tck_weights_in IN/PRE_sift_1M.csv IN/PRE_tracks_10M.tck IN/PRE_parcels_2009.mif IN/PRE_parcels_2009.csv -out_assignment IN/assignments_PRE_parcels_2009.csv
 ## self connectome
 for_each -nthreads 8 BIDS/sub* : cp IN/PRE_parcels_2009.csv output/
 
